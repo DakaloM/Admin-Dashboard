@@ -1,0 +1,142 @@
+@import "../../style.scss";
+
+.sidebar {
+    @include themify($themes){
+        flex:1;
+        border-right: 0.5px solid themed("border");
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow: scroll;
+
+        &::-webkit-scrollbar{
+            display: none;
+        }
+        
+        .routerLink {
+            text-decoration: none;
+        }
+
+        .top {
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            -webkit-box-shadow: 0px 8px 15px -8px themed("boxShadow");
+            -moz-box-shadow: 0px 8px 15px -8px themed("boxShadow");
+            box-shadow: 0px 8px 15px -8px themed("boxShadow");
+            
+
+            .logo {
+                font-size: 20px;
+                font-weight: bold;
+                color: #6439ff
+            }
+        }
+
+        hr {
+            height: 0;
+            border: 0.5px solid themed("border");
+        }
+
+        .center {
+            
+
+            padding-left: 10px;
+            position: relative;
+
+            ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+
+
+
+                .title {
+                    text-transform: uppercase;
+                    font-size: 10px;
+                    font-weight: bold;
+                    color: themed("textColorSoft");
+                    margin-top: 15px;
+                    margin-bottom: 20px;
+                }
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    padding: 5px;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: themed("hover");
+                    }
+
+                    .icon {
+                        font-size: 18px;
+                        color: themed("icons");
+                    }
+
+                    span {
+                        font-size: 13px;
+                        font-weight: 600;
+                        color: themed("textColor");
+                        margin-left: 10px;
+                    }
+                }
+            }
+            
+        }
+
+        .bottom {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            margin: 10px;
+            position: absolute;
+            bottom: 0;
+
+            border-top:  1px solid themed("border");
+
+            ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+
+
+
+                .title {
+                    text-transform: uppercase;
+                    font-size: 10px;
+                    font-weight: bold;
+                    color: themed("textColorSoft");
+                    margin-top: 15px;
+                    margin-bottom: 5px;
+                }
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    padding: 5px;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: themed("hover");
+                    }
+
+                    .icon {
+                        font-size: 18px;
+                        color: themed("icons");
+                    }
+
+                    span {
+                        font-size: 13px;
+                        font-weight: 600;
+                        color: themed("textColor");
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

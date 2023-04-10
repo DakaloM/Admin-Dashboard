@@ -1,0 +1,91 @@
+@import "../../style.scss";
+
+.navbar {
+
+    @include themify($themes){
+        height: 50px;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        position: sticky;
+        top: 0;
+        color: themed("textColor");
+        background-color: themed("bg");
+        z-index: 99999;
+        -webkit-box-shadow: 0px 8px 15px -8px themed("boxShadow");
+        -moz-box-shadow: 0px 8px 15px -8px themed("boxShadow");
+        box-shadow: 0px 8px 15px -8px themed("boxShadow");
+
+        .wrapper {
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .search {
+                display: flex;
+                align-items: center;
+                border: 1px solid themed("border");
+                padding: 3px;
+
+                input {
+                    border: none;
+                    outline: none;
+                    background-color: transparent;
+                    font-size: 14px;
+                    color: themed("textColorSoft");
+
+                    &::placeholder {
+                        font-size: 12px;
+                    }
+                }
+
+                .icon {
+                    color: themed("textColorSoft");
+                    
+                }
+            }
+
+            .items {
+                display: flex;
+                align-items: center;
+
+                .item {
+                    display: flex;
+                    align-items: center;
+                    margin-right: 20px;
+                    position: relative;
+
+                    .icon {
+                        font-size: 20px;
+                        color: themed("textColor");
+                        cursor: pointer;
+                    }
+
+                    img {
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+                    .counter {
+                        width: 15px;
+                        height: 15px;
+                        border-radius: 50%;
+                        background-color: red;
+                        color: white;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 10px;
+                        font-weight: bold;
+                        position: absolute;
+                        top: -7px;
+                        right: -5px;
+                    }
+                }
+            }
+        }
+    }
+}

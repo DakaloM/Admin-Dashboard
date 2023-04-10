@@ -1,0 +1,66 @@
+@import "../../style.scss";
+.widget {
+    
+    @include themify($themes){
+
+        display: flex;
+        justify-content: space-between;
+        flex: 1;
+        padding: 10px;
+        -webkit-box-shadow: 0px 3px 16px -5px themed("boxShadow");
+        -moz-box-shadow: 0px 3px 16px -5px themed("boxShadow");
+        box-shadow: 0px 3px 16px -5px themed("boxShadow");
+        border-radius: 10px;
+        height: 100px;
+
+        .left, .right {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .title {
+                font-weight: bold;
+                font-size: 14px;
+                color: themed("textColorSoft");
+                text-transform: uppercase;
+            }
+
+            .counter {
+                font-size: 28px;
+                font-weight: 300;
+                color: themed("textColor");
+            }
+            .link {
+                width: fit-content;
+                font-size: 12px;
+                color: themed("textColorSoft");
+                border-bottom: 1px solid themed("textColorSoft");
+            }
+
+            .percentage {
+                display: flex;
+                align-items: center;
+                font-size: 14px;
+
+                &.positive {
+                    color: green;
+                }
+                &.negative {
+                    color: red;
+                }
+            }
+
+            .icon {
+                font-size: 18px;
+                padding: 5px;
+                background-color: rgba(128, 0, 128,0.541);
+                border-radius: 5px;
+                align-self: flex-end;
+            }
+        }
+
+        .right {
+
+        }
+    }
+}

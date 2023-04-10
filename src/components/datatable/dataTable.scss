@@ -1,0 +1,94 @@
+@import "../../style.scss";
+.dataTable {
+    @include themify($themes){
+        height: 80vh;
+        padding: 20px;
+        color: themed("textCoplorSoft") !important;
+
+        .datatableTitle {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            color: themed("textColorSoft");
+
+            button {
+                padding: 5px 10px;
+                border: none;
+                background-color: teal;
+                color: white;
+                font-weight: 500px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+        }
+        .dataGrid {
+            border: none;
+            -webkit-box-shadow: 0px 3px 16px -5px themed("boxShadow");
+            -moz-box-shadow: 0px 3px 16px -5px themed("boxShadow");
+            box-shadow: 0px 3px 16px -5px themed("boxShadow");
+            color: themed("textColor");
+
+            .cellWithImg {
+                display: flex;
+                align-items: center;
+                color: themed("textColorSoft");
+
+                .cellImg{
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    margin-right: 20px;
+                }
+            }
+
+            .cellWithStatus {
+                padding: 5px;
+                border-radius: 5px;
+                color: themed("textColorSoft");
+
+                &.active {
+                    color: green;
+                    background-color: rgba(0,128,0,0.05);
+                }
+                &.passive {
+                    color: crimson;
+                    background-color: rgba(225,0,0,0.05);
+                }
+                &.pending {
+                    color: goldenrod;
+                    background-color: rgba(225,217,0,0.05);
+                }
+            }
+
+            .cellAction {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+
+                .routerLink {
+                    text-decoration: none;
+                }
+
+                .viewButton {
+                    padding: 2px 5px;
+                    border-radius: 5px;
+                    color: themed("logo");
+                    border: 1px solid themed("logo");
+                    cursor: pointer;
+                }
+                .deleteButton {
+                    padding: 2px 5px;
+                    border-radius: 5px;
+                    color: crimson;
+                    border: 1px solid rgba(225,0,0,0.596);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
